@@ -13,7 +13,7 @@ const ContactPage = () => {
       <nav className="w-full fixed top-0 left-0 z-20 bg-white/80 backdrop-blur shadow-md">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Solid State Logo" className="w-12 h-12 rounded-2xl shadow-lg border-2 border-blue-200 bg-white/80" />
+            <img src={logo} alt="Solid State Logo" className="w-12 h-12 rounded-xl shadow-lg border-2 border-blue-200 bg-white/80 object-contain p-1" />
             <span className="text-2xl font-bold text-indigo-700">Solid State</span>
           </Link>
           <div className="hidden md:flex space-x-8">

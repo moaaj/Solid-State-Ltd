@@ -6,6 +6,7 @@ import FeaturedProjects from '../components/FeaturedProjects'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import logo from '../assets/images/logo111.jpg'
 
 function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -40,7 +41,7 @@ function HomePage() {
       <nav className="w-full fixed top-0 left-0 z-20 bg-white/60 backdrop-blur-lg shadow-lg border-b border-white/30">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
           <Link to="/" className="flex items-center gap-2">
-            <img src={'/assets/images/logo231.png'} alt="Solid State Logo" className="h-10 w-auto rounded-xl shadow-md bg-white/80 p-1" />
+            <img src={logo} alt="Solid State Logo" className="w-20 h-20 object-contain block mx-auto" />
             <span className="text-2xl font-bold text-indigo-700 drop-shadow-lg">Solid State</span>
           </Link>
           <div className="hidden md:flex space-x-8">

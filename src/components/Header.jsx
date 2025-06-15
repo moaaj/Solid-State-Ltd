@@ -4,26 +4,13 @@ import logo from '../assets/images/logo111.jpg'
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [logoError, setLogoError] = useState(false)
-
-  const handleLogoError = () => {
-    setLogoError(true)
-    console.error('Failed to load logo image')
-  }
 
   return (
     <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
-            {!logoError ? (
-              <img 
-                src={logo} 
-                alt="Solid State Logo" 
-                className="w-12 h-12 rounded-2xl shadow-lg border-2 border-blue-200 bg-white/80"
-                onError={handleLogoError}
-              />
-            ) : null}
+            <img src={logo} alt="Solid State Logo" className="w-12 h-12 rounded-xl shadow-lg border-2 border-blue-200 bg-white/80 object-contain p-1" />
             <span className="text-2xl font-bold text-gray-800">Solid State</span>
           </Link>
           

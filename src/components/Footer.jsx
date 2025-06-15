@@ -104,7 +104,7 @@ function Footer() {
           {/* Company Info */}
           <div className="space-y-4 transform hover:scale-105 transition-transform duration-300">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="Solid State Ltd" className="w-12 h-12 rounded-lg shadow-lg hover:shadow-orange-200/50 transition-shadow duration-300" />
+              <img src={logo} alt="Solid State Logo" className="w-12 h-12 rounded-xl shadow-lg hover:shadow-orange-200/50 transition-shadow duration-300 bg-white/80 object-contain p-1" />
               <div>
                 <h3 className="text-xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">Solid State Ltd</h3>
                 <p className="text-slate-600">Your Splendid House</p>

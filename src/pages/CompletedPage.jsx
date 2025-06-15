@@ -181,12 +181,7 @@ const CompletedPage = () => {
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent" />
-                  <motion.div
-                    initial={{ y: 30, opacity: 0 }}
-                    whileHover={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.4 }}
-                    className="absolute bottom-0 left-0 right-0 p-4 sm:p-6"
-                  >
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 drop-shadow-lg transition-all duration-300 group-hover:scale-105">{project.name}</h3>
                     <div className="flex flex-col sm:flex-row sm:items-center text-white/80 space-y-1 sm:space-y-0 sm:space-x-4">
                       <div className="flex items-center">
@@ -194,17 +189,12 @@ const CompletedPage = () => {
                         <span className="text-xs sm:text-sm">{project.location}</span>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
-                <motion.div
-                  initial={{ y: 30, opacity: 0 }}
-                  whileHover={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.4, delay: 0.1 }}
-                  className="p-4 sm:p-6 flex-1 flex flex-col justify-between"
-                >
+                <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between">
                   <p className="text-blue-900/90 text-sm sm:text-base mb-3 sm:mb-4 font-medium transition-all duration-300 group-hover:scale-105">{project.details}</p>
                   <span className="inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold text-center shadow-md transition-all duration-300 group-hover:scale-105 animate-pulse">{project.description}</span>
-                </motion.div>
+                </div>
               </motion.div>
             ))}
           </div>

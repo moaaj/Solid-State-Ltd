@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import logo from '../assets/images/logo111.jpg'
 
 function Layout({ children }) {
   return (
@@ -9,7 +10,7 @@ function Layout({ children }) {
           <div className="flex justify-between items-center">
             <div className="flex items-center">
               <Link to="/" className="hover:opacity-90 transition-opacity">
-                <img src="/assets/images/logo231.png" alt="Solid State Ltd Logo" className="h-12 w-auto" />
+                <img src={logo} alt="Solid State Logo" className="h-12 w-auto max-w-[120px] w-full object-contain bg-white/80 rounded-xl shadow-md p-1" />
               </Link>
             </div>
             <div className="hidden md:block">

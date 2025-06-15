@@ -3,22 +3,39 @@ import aboutImage from '../assets/images/Bashundhara.jpg'
 
 const features = [
   {
-    icon: 'fas fa-building',
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-blue-500 group-hover:text-pink-500 transition-colors duration-300">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 21V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5V21M3 21h18M3 21v-2.25A2.25 2.25 0 0 1 5.25 16.5h13.5A2.25 2.25 0 0 1 21 18.75V21" />
+      </svg>
+    ),
     title: 'Premium Locations',
     text: `Strategic properties in Dhaka's most sought-after neighborhoods`,
   },
   {
-    icon: 'fas fa-star',
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-yellow-500 group-hover:text-pink-500 transition-colors duration-300">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 17.25l6.16 3.24-1.18-6.88 5-4.87-6.91-1-3.09-6.26-3.09 6.26-6.91 1 5 4.87-1.18 6.88L12 17.25z" />
+      </svg>
+    ),
     title: 'Quality Assurance',
     text: 'Highest standards in construction and finishing',
   },
   {
-    icon: 'fas fa-home',
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-green-500 group-hover:text-pink-500 transition-colors duration-300">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9-7 9 7v7.5A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 19.5V12z" />
+      </svg>
+    ),
     title: 'Modern Design',
     text: 'Contemporary architecture with elegant aesthetics',
   },
   {
-    icon: 'fas fa-clock',
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-purple-500 group-hover:text-pink-500 transition-colors duration-300">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
+        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
+    ),
     title: 'Timely Delivery',
     text: 'Committed to delivering projects on schedule',
   },
@@ -34,6 +51,9 @@ function AboutSection() {
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
+          <div className="w-16 h-16 bg-gradient-to-r from-blue-300 to-blue-400 rounded-full mx-auto mb-4 shadow-lg animate-spin-3d hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+            <i className="fas fa-building text-white text-2xl"></i>
+          </div>
           <h2 className="text-4xl md:text-5xl font-extrabold mb-12 text-center bg-gradient-to-r from-blue-500 via-blue-600 to-blue-800 bg-clip-text text-transparent drop-shadow-2xl tracking-tight md:tracking-wider font-sans transition-transform duration-300 hover:scale-110">About Us</h2>
           <p className="text-lg md:text-xl text-blue-900/90 max-w-2xl mx-auto mb-8 drop-shadow-md tracking-wide font-sans">To the highest standards of quality that we have set and maintained since the beginning of our journey</p>
         </div>
@@ -52,8 +72,8 @@ function AboutSection() {
                     key={idx}
                     className="bg-white/70 backdrop-blur-lg border border-white/30 rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center group hover:bg-gradient-to-br hover:from-blue-100 hover:to-pink-100 hover:scale-110"
                   >
-                    <div className="text-3xl text-blue-500 mb-3 group-hover:text-pink-500 transition-colors duration-300">
-                      <i className={feature.icon}></i>
+                    <div className="mb-3">
+                      {feature.icon}
                     </div>
                     <h3 className="font-bold text-lg mb-1 group-hover:text-purple-600 transition-colors duration-300">{feature.title}</h3>
                     <p className="text-gray-500 text-sm group-hover:text-gray-700 transition-colors duration-300">{feature.text}</p>
