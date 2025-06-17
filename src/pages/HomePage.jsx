@@ -1,12 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Suspense, lazy } from 'react'
 import HeroSection from '../components/HeroSection'
-import AboutSection from '../components/AboutSection'
-import AmenitiesSection from '../components/AmenitiesSection'
-import FeaturedProjects from '../components/FeaturedProjects'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import logo from '../assets/images/logo111.jpg'
+
+// Lazy load components
+const AboutSection = lazy(() => import('../components/AboutSection'))
+const AmenitiesSection = lazy(() => import('../components/AmenitiesSection'))
+const FeaturedProjects = lazy(() => import('../components/FeaturedProjects'))
+
+// Loading fallback component
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center min-h-[200px]">
+    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-600"></div>
+  </div>
+)
 
 function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -68,9 +77,17 @@ function HomePage() {
       </nav>
       <main className="pt-28">
         <HeroSection />
-        <AboutSection />
-        <AmenitiesSection />
-        <FeaturedProjects />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 space-y-16 sm:space-y-20 lg:space-y-24">
+          <Suspense fallback={<LoadingFallback />}>
+            <AboutSection />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback />}>
+            <AmenitiesSection />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback />}>
+            <FeaturedProjects />
+          </Suspense>
+        </div>
       </main>
       <Footer />
     </div>

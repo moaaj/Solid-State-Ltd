@@ -1,0 +1,64 @@
+{
+  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app": {
+    "id": 57,
+    "files": [
+      "static/chunks/57.268c8c590d7f2802.js"
+    ]
+  },
+  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error": {
+    "id": 4100,
+    "files": [
+      "static/chunks/100.f07bf88dd2a89b54.js"
+    ]
+  },
+  "pages\\HomePage.jsx -> ../components/AboutSection": {
+    "id": 3410,
+    "files": [
+      "static/chunks/587-7190557ec13b01c0.js",
+      "static/chunks/29.cfc1e999c395a107.js"
+    ]
+  },
+  "pages\\HomePage.jsx -> ../components/AmenitiesSection": {
+    "id": 4012,
+    "files": [
+      "static/chunks/12.747575b997fd739d.js"
+    ]
+  },
+  "pages\\HomePage.jsx -> ../components/FeaturedProjects": {
+    "id": 8142,
+    "files": [
+      "static/chunks/142.105f0456e916c18f.js"
+    ]
+  },
+  "pages\\completed.js -> ../components/ProjectCard": {
+    "id": 7119,
+    "files": [
+      "static/chunks/587-7190557ec13b01c0.js",
+      "static/chunks/119.012ff1e4163a116f.js"
+    ]
+  },
+  "pages\\contact.js -> ../components/MapComponent": {
+    "id": 4353,
+    "files": [
+      "static/chunks/353.531a6c1c3401c6bf.js"
+    ]
+  },
+  "pages\\index.js -> ../components/AboutSection": {
+    "id": 3410,
+    "files": [
+      "static/chunks/410.cfc1e999c395a107.js"
+    ]
+  },
+  "pages\\index.js -> ../components/AmenitiesSection": {
+    "id": 4012,
+    "files": [
+      "static/chunks/12.747575b997fd739d.js"
+    ]
+  },
+  "pages\\index.js -> ../components/FeaturedProjects": {
+    "id": 8142,
+    "files": [
+      "static/chunks/142.105f0456e916c18f.js"
+    ]
+  }
+}

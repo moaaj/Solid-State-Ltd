@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const amenities = [
   {
@@ -18,7 +19,7 @@ const amenities = [
       </svg>
     ),
     title: 'Private Security',
-    desc: 'This (Solid-State Abedin Villa) apartment is on the south gate of Honourable chairman of Bashundhara group. So full security is always there in our apartment.'
+    desc: 'This (Solid State - Abedin Villa) apartment is on the south gate of Honourable chairman of Bashundhara group. So full security is always there in our apartment.'
   },
   {
     icon: (
@@ -62,30 +63,133 @@ const amenities = [
 ]
 
 function AmenitiesSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.6, -0.05, 0.01, 0.99]
+      }
+    }
+  }
+
+  const iconVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    }
+  }
+
   return (
-    <section id="amenities" className="py-24 bg-gradient-to-br from-blue-100 via-blue-300 to-blue-500">
+    <motion.section 
+      id="amenities" 
+      className="py-24 bg-gradient-to-br from-blue-100 via-blue-300 to-blue-500"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={containerVariants}
+    >
       <div className="max-w-7xl mx-auto px-4">
-        <div className="absolute left-1/2 top-10 -translate-x-1/2 z-0">
-          <div className="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-blue-300 via-blue-400 to-purple-400 rounded-full shadow-2xl blur-sm opacity-60 animate-spin-3d"></div>
-          <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-blue-200 via-blue-300 to-pink-200 rounded-full shadow-xl blur-md opacity-40 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin-slow"></div>
-        </div>
-        <div className="w-16 h-16 bg-gradient-to-r from-blue-300 to-blue-400 rounded-full mx-auto mb-4 shadow-lg animate-spin-3d hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+        <motion.div 
+          className="absolute left-1/2 top-10 -translate-x-1/2 z-0"
+          animate={{
+            rotate: 360,
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          <div className="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-blue-300 via-blue-400 to-purple-400 rounded-full shadow-2xl blur-sm opacity-60"></div>
+          <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-blue-200 via-blue-300 to-pink-200 rounded-full shadow-xl blur-md opacity-40 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+        </motion.div>
+
+        <motion.div 
+          variants={itemVariants}
+          className="w-16 h-16 bg-gradient-to-r from-blue-300 to-blue-400 rounded-full mx-auto mb-4 shadow-lg flex items-center justify-center"
+          animate={{
+            rotate: 360,
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
           <i className="fas fa-star text-white text-2xl"></i>
-        </div>
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-12 text-center bg-gradient-to-r from-blue-500 via-blue-600 to-blue-800 bg-clip-text text-transparent drop-shadow-2xl tracking-tight md:tracking-wider font-sans transition-transform duration-300 hover:scale-110">Building Amenities</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        </motion.div>
+
+        <motion.h2 
+          variants={itemVariants}
+          className="text-4xl md:text-5xl font-extrabold mb-12 text-center bg-gradient-to-r from-blue-500 via-blue-600 to-blue-800 bg-clip-text text-transparent drop-shadow-2xl tracking-tight md:tracking-wider font-sans"
+        >
+          Building Amenities
+        </motion.h2>
+
+        <motion.div 
+          variants={containerVariants}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+        >
           {amenities.map((amenity, idx) => (
-            <div key={idx} className={`rounded-2xl p-8 shadow-lg flex flex-col items-center text-center transition hover:-translate-y-2 hover:shadow-2xl hover:scale-110 ${amenity.highlight ? 'bg-gradient-to-br from-blue-500 to-purple-500 text-white' : 'bg-white'}`}>
-              <div className="mb-4">
+            <motion.div 
+              key={idx} 
+              variants={itemVariants}
+              whileHover={{ 
+                scale: 1.05,
+                y: -5,
+                transition: { duration: 0.3 }
+              }}
+              className={`rounded-2xl p-8 shadow-lg flex flex-col items-center text-center transition ${amenity.highlight ? 'bg-gradient-to-br from-blue-500 to-purple-500 text-white' : 'bg-white'}`}
+            >
+              <motion.div 
+                variants={iconVariants}
+                whileHover={{ 
+                  scale: 1.2,
+                  rotate: 5,
+                  transition: { duration: 0.3 }
+                }}
+                className="mb-4"
+              >
                 {amenity.icon}
-              </div>
-              <div className="font-bold text-lg mb-2">{amenity.title}</div>
-              <div className="text-base opacity-80">{amenity.desc}</div>
-            </div>
+              </motion.div>
+              <motion.div 
+                variants={itemVariants}
+                className="font-bold text-lg mb-2"
+              >
+                {amenity.title}
+              </motion.div>
+              <motion.div 
+                variants={itemVariants}
+                className="text-base opacity-80"
+              >
+                {amenity.desc}
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

@@ -82,108 +82,56 @@ function Footer() {
   }, [])
 
   return (
-    <footer className="relative bg-white text-slate-800 overflow-hidden">
-      {/* Three.js Canvas */}
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-40" style={{ pointerEvents: 'none' }} />
-      
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Left Side Decoration */}
-        <div className="absolute left-0 top-1/4 w-64 h-64 bg-gradient-to-br from-orange-50/30 to-amber-50/30 rounded-full blur-3xl transform -translate-x-1/2" />
-        <div className="absolute left-0 bottom-1/4 w-48 h-48 bg-gradient-to-br from-yellow-50/30 to-orange-50/30 rounded-full blur-3xl transform -translate-x-1/2" />
-        
-        {/* Right Side Decoration */}
-        <div className="absolute right-0 top-1/3 w-72 h-72 bg-gradient-to-br from-amber-50/30 to-yellow-50/30 rounded-full blur-3xl transform translate-x-1/2" />
-        <div className="absolute right-0 bottom-1/3 w-56 h-56 bg-gradient-to-br from-orange-50/30 to-amber-50/30 rounded-full blur-3xl transform translate-x-1/2" />
-      </div>
+    <footer className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600 text-white backdrop-blur-xl shadow-2xl border-t-4 border-blue-400">
+      {/* Glassmorphism & Animated Gradient Blobs */}
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-30 pointer-events-none" />
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 rounded-full blur-3xl opacity-40 animate-spin-slow" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tr from-blue-200 via-indigo-400 to-purple-300 rounded-full blur-2xl opacity-30 animate-pulse" />
 
-      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Company Info */}
-          <div className="space-y-4 transform hover:scale-105 transition-transform duration-300">
-            <div className="flex items-center gap-3">
-              <img src={logo} alt="Solid State Logo" className="w-12 h-12 rounded-xl shadow-lg hover:shadow-orange-200/50 transition-shadow duration-300 bg-white/80 object-contain p-1" />
-              <div>
-                <h3 className="text-xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">Solid State Ltd</h3>
-                <p className="text-slate-600">Your Splendid House</p>
-              </div>
-            </div>
-            {/* Social Media Links */}
-            <div className="flex gap-4 mt-4">
-              {['facebook', 'twitter', 'instagram', 'linkedin'].map((social) => (
-                <a key={social} href={`#${social}`} className="w-10 h-10 rounded-full bg-slate-50 hover:bg-orange-500 hover:text-white flex items-center justify-center transition-all duration-300">
-                  <i className={`fab fa-${social}`}></i>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Company Links */}
-          <div className="transform hover:scale-105 transition-transform duration-300">
-            <h4 className="text-lg font-semibold mb-4 text-orange-600">Company</h4>
-            <ul className="space-y-2">
-              {['About Us', 'Plan', 'View Completed Projects', 'Contact Solid State Ltd'].map((item, index) => (
-                <li key={index}>
-                  <a href={`/${item.toLowerCase().replace(/\s+/g, '-')}`} 
-                     className="text-slate-600 hover:text-orange-600 transition-colors duration-300 flex items-center gap-2 group">
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-orange-500 transition-all duration-300"></span>
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Customer Care */}
-          <div className="transform hover:scale-105 transition-transform duration-300">
-            <h4 className="text-lg font-semibold mb-4 text-orange-600">Customer Care</h4>
-            <ul className="space-y-2">
-              {['FAQ', 'Order Tracking', 'Terms & Conditions', 'Support'].map((item, index) => (
-                <li key={index}>
-                  <a href={`/${item.toLowerCase().replace(/\s+/g, '-')}`} 
-                     className="text-slate-600 hover:text-orange-600 transition-colors duration-300 flex items-center gap-2 group">
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-orange-500 transition-all duration-300"></span>
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="transform hover:scale-105 transition-transform duration-300">
-            <h4 className="text-lg font-semibold mb-4 text-orange-600">Contact</h4>
-            <ul className="space-y-2">
-              <li className="flex items-start gap-2 group">
-                <i className="fas fa-map-marker-alt mt-1 text-orange-500 group-hover:scale-110 transition-transform duration-300"></i>
-                <span className="text-slate-600 group-hover:text-orange-600 transition-colors duration-300">
-                  House 69/3, Road 7/A, Dhanmondi, Dhaka-1209
-                </span>
-              </li>
-              <li className="flex items-center gap-2 group">
-                <i className="fas fa-phone text-orange-500 group-hover:scale-110 transition-transform duration-300"></i>
-                <a href="tel:01309020643" className="text-slate-600 hover:text-orange-600 transition-colors duration-300">
-                  01309020643
-                </a>
-              </li>
-              <li className="flex items-center gap-2 group">
-                <i className="fas fa-envelope text-orange-500 group-hover:scale-110 transition-transform duration-300"></i>
-                <a href="mailto:solidstatebde@gmail.com" className="text-slate-600 hover:text-orange-600 transition-colors duration-300">
-                  solidstatebde@gmail.com
-                </a>
-              </li>
-            </ul>
+        <div className="flex flex-col items-center justify-center gap-4">
+          <img src="/images/logo231.png" alt="Solid State Logo" className="w-16 h-16 rounded-2xl shadow-2xl border-4 border-white/30 bg-white/80 object-contain p-2 hover:scale-110 transition-transform duration-300 mb-2" />
+          <span className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-orange-400 via-yellow-400 to-pink-500 bg-clip-text text-transparent drop-shadow-lg tracking-wide font-sans mb-2">Solid State Ltd</span>
+          <p className="text-blue-100/80 text-base md:text-lg font-medium text-center max-w-xs mb-2">Your Splendid House. Building Trust Since 1996.</p>
+          <h4 className="text-lg font-semibold text-blue-200 tracking-wide uppercase text-center">Contact</h4>
+          <ul className="space-y-2 text-base md:text-lg text-center">
+            <li className="flex items-center justify-center gap-3 group">
+              <i className="fas fa-map-marker-alt text-pink-400 group-hover:scale-110 transition-transform duration-300"></i>
+              <span className="text-blue-100 group-hover:text-pink-300 transition-colors duration-300">House 69/3, Road 7/A, Dhanmondi, Dhaka-1209</span>
+            </li>
+            <li className="flex items-center justify-center gap-3 group">
+              <i className="fas fa-phone text-pink-400 group-hover:scale-110 transition-transform duration-300"></i>
+              <a href="tel:01309020643" className="text-blue-100 hover:text-pink-300 transition-colors duration-300">01309020643</a>
+            </li>
+            <li className="flex items-center justify-center gap-3 group">
+              <i className="fas fa-envelope text-pink-400 group-hover:scale-110 transition-transform duration-300"></i>
+              <a href="mailto:solidstatebde@gmail.com" className="text-blue-100 hover:text-pink-300 transition-colors duration-300">solidstatebde@gmail.com</a>
+            </li>
+            <li className="flex items-center justify-center gap-3 group">
+              <i className="fas fa-envelope text-pink-400 group-hover:scale-110 transition-transform duration-300"></i>
+              <a href="mailto:solidstate_bde@yahoo.com" className="text-blue-100 hover:text-pink-300 transition-colors duration-300">solidstate_bde@yahoo.com</a>
+            </li>
+            <li className="flex items-center justify-center gap-3 group">
+              <i className="fas fa-envelope text-pink-400 group-hover:scale-110 transition-transform duration-300"></i>
+              <a href="mailto:admin@solidstatebde.com" className="text-blue-100 hover:text-pink-300 transition-colors duration-300">admin@solidstatebde.com</a>
+            </li>
+          </ul>
+          <div className="flex gap-4 mt-4 justify-center">
+            {['facebook', 'twitter', 'instagram', 'linkedin'].map((social) => (
+              <a key={social} href={`#${social}`} className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-700 flex items-center justify-center text-white shadow-lg hover:scale-110 hover:bg-pink-500 transition-all duration-300">
+                <i className={`fab fa-${social} text-xl`}></i>
+              </a>
+            ))}
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-slate-200 text-center">
-          <p className="text-slate-600 hover:text-orange-600 transition-colors duration-300">
-            © 2024 Solid State Ltd. All rights reserved.
+        <div className="mt-10 pt-8 border-t border-blue-300/30 text-center">
+          <p className="text-blue-100/80 hover:text-pink-300 transition-colors duration-300 text-base md:text-lg">
+            Solid State Ltd all rights reserved
           </p>
-      </div>
+        </div>
       </div>
     </footer>
   )
