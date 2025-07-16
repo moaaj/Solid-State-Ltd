@@ -1,0 +1,38 @@
+{
+  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app": {
+    "id": "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app",
+    "files": [
+      "static/chunks/_pages-dir-browser_node_modules_next_dist_pages__app_js.js"
+    ]
+  },
+  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error": {
+    "id": "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error",
+    "files": [
+      "static/chunks/_pages-dir-browser_node_modules_next_dist_pages__error_js.js"
+    ]
+  },
+  "pages\\index.js -> ../components/AboutSection": {
+    "id": "pages\\index.js -> ../components/AboutSection",
+    "files": [
+      "static/chunks/_pages-dir-browser_src_components_AboutSection_jsx.js"
+    ]
+  },
+  "pages\\index.js -> ../components/AmenitiesSection": {
+    "id": "pages\\index.js -> ../components/AmenitiesSection",
+    "files": [
+      "static/chunks/_pages-dir-browser_src_components_AmenitiesSection_jsx.js"
+    ]
+  },
+  "pages\\index.js -> ../components/FeaturedProjects": {
+    "id": "pages\\index.js -> ../components/FeaturedProjects",
+    "files": [
+      "static/chunks/_pages-dir-browser_src_components_FeaturedProjects_jsx.js"
+    ]
+  },
+  "pages\\index.js -> ../components/VideoSection": {
+    "id": "pages\\index.js -> ../components/VideoSection",
+    "files": [
+      "static/chunks/_pages-dir-browser_src_components_VideoSection_jsx.js"
+    ]
+  }
+}

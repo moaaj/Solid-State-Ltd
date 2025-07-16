@@ -1,0 +1,19 @@
+import React from 'react';
+
+const MapComponent = () => {
+  return (
+    <iframe
+      title="Google Map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.9024424301397!2d90.3712953!3d23.7464663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8983f79fa27%3A0x7c2b1a7c1a0c0c0c!2sHouse%2069%2F3%2C%20Road%207%2FA%2C%20Dhanmondi%2C%20Dhaka%201209!5e0!3m2!1sen!2sbd!4v1620000000000!5m2!1sen!2sbd"
+      width="100%"
+      height="300"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      className="h-[250px] sm:h-[350px]"
+    />
+  );
+};
+
+export default MapComponent; 
